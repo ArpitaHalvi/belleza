@@ -13,6 +13,7 @@ import ContactForm from "@/components/ContactForm";
 import { useRef } from "react";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
+import BottomNavbar from "@/components/BottomNavbar";
 
 export default function Home() {
   const contactRef = useRef(null);
@@ -45,6 +46,10 @@ export default function Home() {
       <div ref={contactRef}>
         <ContactForm />
       </div>
+      <BottomNavbar
+        onContactClick={scrollToContact}
+        onCourseClick={scrollToCourses}
+      />
       <Footer />
     </main>
   );

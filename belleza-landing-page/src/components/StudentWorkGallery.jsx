@@ -25,6 +25,7 @@ export default function StudentWorkGallery() {
               src={photo}
               width={100}
               height={100}
+              loading="lazy"
               className="w-full object-contain rounded-2xl shadow-md"
               alt={`Gallery Image ${index + 1}`}
             />

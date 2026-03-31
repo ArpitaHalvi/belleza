@@ -25,6 +25,7 @@ export default function Placement() {
               src={src}
               width={100}
               height={100}
+              loading="lazy"
               className="w-full h-80 object-contain"
               alt={`image-${i}`}
             />

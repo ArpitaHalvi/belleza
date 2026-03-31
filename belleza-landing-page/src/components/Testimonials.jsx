@@ -1,5 +1,5 @@
 import Heading from "./ui/Heading";
-import Image from "next/image";
+import { IoStarSharp } from "react-icons/io5";
 
 export default function Testimonials() {
   const testimonials = [
@@ -21,7 +21,7 @@ export default function Testimonials() {
           {[...testimonials, ...testimonials].map((testimonial, i) => (
             <div
               key={i}
-              className="shrink-0 w-80 p-5 bg-white rounded-lg shadow-md border border-[#791535]"
+              className="shrink-0 w-80 p-10 bg-white rounded-2xl shadow-md border border-[#791535] flex flex-col gap-7"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-[#791535] rounded-xl"></div>
@@ -29,13 +29,13 @@ export default function Testimonials() {
                   {testimonial.name}
                 </h3>
               </div>
-              <p className="text-gray-600 pt-5">{testimonial.feedback}</p>
-              <div className="flex">
-                {[...Array(testimonial.rating)].map((_, j) => (
-                  <span key={j} className="text-yellow-500">
-                    ★
-                  </span>
-                ))}
+              <div>
+                <div className="flex">
+                  {[...Array(testimonial.rating)].map((_, j) => (
+                    <IoStarSharp key={j} className="text-yellow-500" />
+                  ))}
+                </div>
+                <p className="text-gray-600 pt-2">{testimonial.feedback}</p>
               </div>
             </div>
           ))}
