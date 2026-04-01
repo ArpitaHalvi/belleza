@@ -1,0 +1,29 @@
+import { Schema, mongoose } from "mongoose";
+
+const contactSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  phoneNumber: {
+    type: String,
+    required: true,
+  },
+  location: {
+    type: String,
+    required: true,
+    enum: ["haldwani", "dehradun", "rudrapur", "bajpur"],
+  },
+  message: {
+    type: String,
+    required: true,
+  },
+});
+
+const Contact = mongoose.model("Contact", contactSchema);
+
+export default Contact;
