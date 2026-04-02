@@ -23,7 +23,7 @@ export default function HeroSection({ onContactClick, onCourseClick }) {
   return (
     <div className="w-full h-screen grid grid-cols-1 lg:grid-cols-2">
       {/* Left Side */}
-      <div className="absolute top-5 left-10">
+      <div className="absolute top-5 left-5 sm:left-10">
         <Image
           src="/assets/images/logos/belleza_logo.svg"
           width={100}
@@ -38,25 +38,26 @@ export default function HeroSection({ onContactClick, onCourseClick }) {
         animate="visible"
       >
         <motion.p
-          className="text-left ml-2 px-3 py-2 border-l-4 border-[#FDDFBF] text-[#FDDFBF] text-medium font-semibold"
+          className="text-left ml-2 px-3 border-l-4 border-[#FDDFBF] text-[#FDDFBF] text-sm font-semibold"
           variants={itemVariants}
         >
-          lorem ipsum.
+          Belleza Beauty School
         </motion.p>
         <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#FDDFBF] "
+          className="text-4xl md:text-6xl lg:text-7xl xl:text-7xl font-bold text-[#FDDFBF] "
           variants={itemVariants}
         >
-          Lorem ipsum dolor sit amet.
+          Start Your Career in the Beauty Industry
         </motion.h1>
         <motion.p
           className="text-[#FDDFBF] text-sm leading-tight"
           variants={itemVariants}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-          fugiat nesciunt velit iusto repellat deserunt illum accusamus
-          sapiente. Quod cupiditate vero assumenda ipsa unde fuga culpa dolores
-          error at accusantium.
+          Become a certified{" "}
+          <span className="font-bold">
+            Makeup Artist, Hair Expert, or Beauty Professional
+          </span>{" "}
+          with professional training and practical learning.
         </motion.p>
         <motion.div className="flex gap-4" variants={itemVariants}>
           <button

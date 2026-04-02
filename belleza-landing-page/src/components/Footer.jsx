@@ -83,7 +83,7 @@ export default function Footer() {
       <p className="text-xs text-[#F7F7EE] pb-15 sm:pb-0 pt-10">
         &copy;
         {new Date().getFullYear()}
-        <span className="capitalize text-center">Belleza Beauty School</span>
+        <span className="capitalize text-center"> Belleza Beauty School</span>
         All Rights Reserved.
       </p>
     </section>

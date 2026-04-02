@@ -6,11 +6,23 @@ import Heading from "./ui/Heading";
 export default function Courses({ onContactClick }) {
   const [active, setActive] = useState("offline");
   const [activeSubCategory, setActiveSubCategory] = useState("All Courses");
+  // Master in Cosmetology
+  //  Complete beauty training: makeup, hair, skin & nails.
+  // Makeup, Hair & Skin Care Training
+  // Advanced Beauty, Nail Extensions & Chemical Services
+  // Professional Certification · Practical Training · Career Support
+
   const offlineCourses = [
     {
       id: 1,
-      title: "Offline Course 1",
-      description: "Description for Offline Course 1",
+      title: "Master in Cosmetology",
+      description:
+        "Complete beauty training: makeup, hair, skin & nails. Makeup, Hair & Skin Care Training",
+      summary: [
+        "Makeup, Hair & Skin Care Training",
+        "Advanced Beauty, Nail Extensions & Chemical Services",
+        "Professional Certification · Practical Training · Career Support",
+      ],
       price: "99",
       type: "Nail",
       duration: "4 weeks",
@@ -19,6 +31,11 @@ export default function Courses({ onContactClick }) {
       id: 2,
       title: "Offline Course 2",
       description: "Description for Offline Course 2",
+      summary: [
+        "Makeup, Hair & Skin Care Training",
+        "Advanced Beauty, Nail Extensions & Chemical Services",
+        "Professional Certification · Practical Training · Career Support",
+      ],
       price: "149",
       type: "Hair",
       duration: "6 weeks",
@@ -27,6 +44,11 @@ export default function Courses({ onContactClick }) {
       id: 3,
       title: "Offline Course 3",
       description: "Description for Offline Course 3",
+      summary: [
+        "Makeup, Hair & Skin Care Training",
+        "Advanced Beauty, Nail Extensions & Chemical Services",
+        "Professional Certification · Practical Training · Career Support",
+      ],
       price: "199",
       type: "Beauty",
       duration: "8 weeks",
@@ -76,6 +98,11 @@ export default function Courses({ onContactClick }) {
                     </div>
                     <h2 className="font-bold text-xl">{course.title}</h2>
                     <p className="text-sm">{course.description}</p>
+                    {course.summary.map((sum) => (
+                      <div className="" key={sum} type="square">
+                        <li className="text-sm">{sum}</li>
+                      </div>
+                    ))}
                     <hr className="text-gray-300" />
                     <div className="flex items-center justify-between">
                       <div className="flex flex-col">

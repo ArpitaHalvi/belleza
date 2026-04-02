@@ -25,9 +25,9 @@ export default function Home() {
   const scrollToCourses = () => {
     exploreCourses.current?.scrollIntoView({ behavior: "smooth" });
   };
-
+  // bg-[#F7F7EE]
   return (
-    <main className="bg-[#F7F7EE]">
+    <main className="bg-white">
       <HeroSection
         onContactClick={scrollToContact}
         onCourseClick={scrollToCourses}
@@ -39,8 +39,8 @@ export default function Home() {
       <WhyChooseUs />
       <CareerTransformation />
       <StudentWorkGallery />
-      <Placement />
-      <Accreditions />
+      {/* <Placement /> */}
+      {/* <Accreditions /> */}
       <AdminProcessTimeline />
       <Testimonials />
       <div ref={contactRef}>
