@@ -69,7 +69,7 @@ export default function Footer() {
             {details.map((detail) => (
               <a
                 key={detail.name}
-                href={detail.link}
+                href={`${detail.name.toLowerCase() === "email" ? `mailto:${detail.value}` : detail.value}`}
                 target="_blank"
                 className="flex flex-col gap-2 cursor-pointer"
               >
@@ -88,7 +88,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="w-full flex flex-col md:flex-row justify-between items-center">
-        <p className={`text-md ${textColor4} pt-10 md:pb-10`}>
+        <p className={`text-md ${textColor4} pt-10 md:pb-10 text-center`}>
           &copy;
           {new Date().getFullYear()}
           <span className="capitalize text-center">

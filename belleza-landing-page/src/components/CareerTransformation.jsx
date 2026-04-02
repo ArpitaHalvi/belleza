@@ -28,7 +28,7 @@ guided by industry-certified trainers and global techniques."
           return (
             <div
               key={t}
-              className={`w-full ${bgColor3} flex flex-col items-center gap-1 sm:gap-3 px-2 md:p-5 py-5 sm:py-8 rounded-2xl transition-all duartion-600 hover:scale-105`}
+              className={`w-full ${bgColor3} flex flex-col justify-center items-center text-center gap-1 sm:gap-3 px-2 md:p-5 py-5 sm:py-8 rounded-2xl transition-all duartion-600 hover:scale-105`}
             >
               <h6
                 className={`${textColor2} font-bold leading-tight text-center text-sm sm:text-md`}
