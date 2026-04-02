@@ -29,6 +29,9 @@ export default function HeroSection({ onContactClick, onCourseClick }) {
           width={100}
           height={100}
           alt="Belleza Logo"
+          priority
+          loading="eager"
+          className="w-20 h-20 sm:w-30 sm:h-30"
         />
       </div>
       <motion.div

@@ -12,11 +12,11 @@ export default function StudentWorkGallery() {
   return (
     <section className="w-full my-10 p-5 sm:p-10 flex flex-col items-center justify-center">
       <Heading
-        title="Student Portfolio"
+        title="Experience the Story"
         subtitle="Student work gallery"
         titleColor={color2}
         subtitleColor={color2}
-        description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia impedit voluptates maiores harum molestiae ad dolorum natus soluta nisi autem!"
+        description="Explore the creativity, precision, and professional skills showcased through our students’ real-time practice, transformations, and artistic beauty creations."
       />
       <div className="w-full grid grid-cols-2 md:grid-cols-3 align-middle gap-2 sm:gap-5 py-10">
         {photos.map((photo, index) => (

@@ -9,28 +9,28 @@ import {
 import Heading from "./ui/Heading";
 import { IoStarSharp } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
+import { testimonials } from "@/seeds/testimonials";
 
 export default function Testimonials() {
-  const testimonials = [
-    { name: "John Doe", feedback: "This course changed my life!", rating: 5 },
-    { name: "John Doe", feedback: "This course changed my life!", rating: 5 },
-    { name: "John Doe", feedback: "This course changed my life!", rating: 5 },
-  ];
   return (
     <section className="w-full">
       <Heading
         title="Testimonials"
-        subtitle="What Our Students Say"
+        subtitle="Stories of Unforgettable Experiences"
         titleColor={color2}
         subtitleColor={color2}
-        description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia impedit voluptates maiores harum molestiae ad dolorum natus soluta nisi autem!"
+        description="Our Students Consistently Praise."
       />
-      <div className="overflow-hidden w-full py-10">
-        <div className="flex animate-conveyor gap-6 w-max">
+      <div
+        className={`overflow-hidden w-full py-10 ${!(testimonials.length > 5) && "px-10"}`}
+      >
+        <div
+          className={`flex ${testimonials.length > 5 ? "animate-conveyor" : "w-full justify-center items-center"} gap-6 w-max`}
+        >
           {[...testimonials, ...testimonials].map((testimonial, i) => (
             <div
               key={i}
-              className={`shrink-0 w-80 p-10 bg-white rounded-2xl shadow-md border border-[${color1}] flex flex-col gap-7`}
+              className={`shrink-0 w-80 p-5 md:p-7 bg-white rounded-2xl shadow-md border border-[${color1}] flex flex-col gap-7`}
             >
               <div className="flex items-start gap-3">
                 <div
@@ -45,13 +45,13 @@ export default function Testimonials() {
                 </h3>
               </div>
               <div>
-                <div className="flex">
+                <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, j) => (
                     <IoStarSharp key={j} className="text-yellow-500" />
                   ))}
                 </div>
                 <p className={`pt-2 text-sm ${textColor2}`}>
-                  {testimonial.feedback}
+                  {testimonial.review}
                 </p>
               </div>
             </div>

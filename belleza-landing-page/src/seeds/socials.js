@@ -1,5 +1,5 @@
 import { GrInstagram } from "react-icons/gr";
-import { IoLogoYoutube } from "react-icons/io";
+import { FaFacebookF } from "react-icons/fa";
 
 export const socials = [
   {
@@ -9,7 +9,7 @@ export const socials = [
   },
   {
     name: "Youtube",
-    icon: <IoLogoYoutube size={20} />,
+    icon: <FaFacebookF size={20} />,
     link: "https://www.facebook.com/people/Belleza-Beauty-School-Rudrapur/61584485860632/",
   },
 ];

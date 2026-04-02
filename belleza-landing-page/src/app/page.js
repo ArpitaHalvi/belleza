@@ -42,7 +42,7 @@ export default function Home() {
       {/* <Placement /> */}
       {/* <Accreditions /> */}
       <AdminProcessTimeline />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <div ref={contactRef}>
         <ContactForm />
       </div>

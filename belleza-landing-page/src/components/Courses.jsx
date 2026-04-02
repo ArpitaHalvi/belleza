@@ -54,11 +54,11 @@ export default function Courses({ onContactClick }) {
         subtitle="Featured Courses"
         titleColor={color2}
         subtitleColor={color2}
-        description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia impedit voluptates maiores harum molestiae ad dolorum natus soluta nisi autem!"
+        description="Our globally recognized curriculum and career-focused approach help students master beauty skills and confidently step into the professional industry."
       />
       <div className="px-7 lg:px-10 xl:px-30 py-10 w-full">
         {active === "offline" ? (
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-7 lg:gap-10 place-items-start gap-10">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-7 lg:gap-10 place-items-center md:place-items-start gap-10">
             {filteredCourses.map((course) => {
               return (
                 <div
@@ -157,7 +157,8 @@ const CourseCategories = ({ category, fn }) => {
   const activeCategory = category ?? "All";
   return (
     <section
-      className={`w-full h-10 overflow-x-auto no-scrollbar sm:overflow-hidden sm:h-20 flex justify-center items-center md:gap-10 border-b border-[${color1}]`}
+      // className={`w-full h-10 overflow-x-auto no-scrollbar sm:overflow-hidden sm:h-20 flex justify-center items-center md:gap-10 border-b border-[${color1}]`}
+      className={`w-full h-10 overflow-x-auto no-scrollbar sm:overflow-hidden sm:h-20 flex justify-start items-center md:gap-10 px-4 scroll-px-4 border-b border-[${color1}]`}
     >
       {courseCategories.map((category) => {
         return (

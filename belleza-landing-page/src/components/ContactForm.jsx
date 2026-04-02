@@ -84,7 +84,7 @@ export default function ContactForm() {
         title="Get in Touch"
         subtitle="Contact Us"
         titleColor="#826955"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, sit!"
+        description="Connecting with Belleza is your first step toward a successful beauty career."
       />
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 py-10 sm:p-10">
         <div className="w-full flex flex-col items-start gap-3 bg-white rounded-2xl shadow-lg p-5 sm:p-7">
@@ -92,8 +92,7 @@ export default function ContactForm() {
             Contact Us
           </h3>
           <p className={`text-sm ${textColor2} font-semibold`}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae,
-            veritatis?
+            We believe every future artist deserves clarity before they begin.
           </p>
           <div className="py-2 flex flex-wrap gap-3 md:gap-10 xl:gap-20">
             {details.map((detail) => {
