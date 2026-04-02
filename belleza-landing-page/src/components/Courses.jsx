@@ -99,8 +99,8 @@ export default function Courses({ onContactClick }) {
                     <h2 className="font-bold text-xl">{course.title}</h2>
                     <p className="text-sm">{course.description}</p>
                     {course.summary.map((sum) => (
-                      <div className="" key={sum} type="square">
-                        <li className="text-sm">{sum}</li>
+                      <div className="text-black" key={sum} type="square">
+                        <li className="text-sm text-black">{sum}</li>
                       </div>
                     ))}
                     <hr className="text-gray-300" />
