@@ -5,7 +5,7 @@ const contact = async (req, res) => {
     const { name, email, message, location, phoneNumber } = req.body;
     console.log("Req: ", req.body);
 
-    if (!name || !email || !message || !location || !phoneNumber) {
+    if (!name || !email || !location || !phoneNumber) {
       console.log("Inside validation failure.");
 
       return res.status(400).json({ message: "All fields are required" });

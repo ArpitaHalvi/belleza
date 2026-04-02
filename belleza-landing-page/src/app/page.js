@@ -3,7 +3,7 @@
 import Courses from "@/components/Courses";
 import HeroSection from "@/components/HeroSection";
 import Stats from "@/components/Stats";
-import WhyChooseUs from "@/components/Services";
+import Services from "@/components/Services";
 import CareerTransformation from "@/components/CareerTransformation";
 import StudentWorkGallery from "@/components/StudentWorkGallery";
 import Placement from "@/components/Placement";
@@ -36,7 +36,7 @@ export default function Home() {
       <div ref={exploreCourses}>
         <Courses onContactClick={scrollToContact} />
       </div>
-      <WhyChooseUs />
+      <Services />
       <CareerTransformation />
       <StudentWorkGallery />
       {/* <Placement /> */}

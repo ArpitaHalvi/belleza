@@ -1,37 +1,40 @@
+import {
+  bgColor1,
+  bgColor2,
+  bgColor3,
+  bgColor4,
+  color3,
+  textColor2,
+  textColor4,
+} from "@/utils/colors.utils";
 import Heading from "./ui/Heading";
+import { academyFeatures } from "@/seeds/career-transformation";
 
 export default function CareerTransformation() {
-  const transforms = [
-    { name: "transform1" },
-    { name: "transform2" },
-    { name: "transform3" },
-    { name: "transform4" },
-    { name: "transform5" },
-  ];
   return (
-    <section className="w-full xl:h-[80vh] bg-[#791535] flex flex-col items-center justify-center p-10 gap-3">
+    <section
+      className={`w-full ${bgColor1} flex flex-col items-center justify-center p-7 sm:p-20 gap-3`}
+    >
       <Heading
-        title="Career Transformation"
-        subtitle="Your Life Change Starts Here"
-        titleColor="#FDDFBF"
-        subtitleColor="#FDDFBF"
-        description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia impedit voluptates maiores harum molestiae ad dolorum natus soluta nisi autem!"
+        title="Empowering Beauty Through Excellence"
+        subtitle="Discover the World of Belleza"
+        titleColor={color3}
+        subtitleColor={color3}
+        description="Welcome to Belleza Beauty School, your gateway to world-class beauty education
+guided by industry-certified trainers and global techniques."
       />
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 py-5">
-        {transforms.map((t) => {
+      <div className="w-full grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 py-10">
+        {academyFeatures.map((t) => {
           return (
             <div
-              key={t.name}
-              className="w-full bg-[#826955] flex flex-col items-start gap-1 sm:gap-3 p-3 md:p-5 lg:p-10 rounded-2xl transition-all duartion-600 hover:scale-105"
+              key={t}
+              className={`w-full ${bgColor3} flex flex-col items-center gap-1 sm:gap-3 px-2 md:p-5 py-5 sm:py-8 rounded-2xl transition-all duartion-600 hover:scale-105`}
             >
-              <div className="w-10 h-10 mb-2 sm:mb-0 bg-[#FDDFBF] rounded-xl"></div>
-              <h6 className="text-[#F7F7EE] font-bold leading-tight">
-                Lorem, ipsum.
+              <h6
+                className={`${textColor2} font-bold leading-tight text-center text-sm sm:text-md`}
+              >
+                {t}
               </h6>
-              <p className="text-[#F7F7EE] leading-tight">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Eveniet, quidem.
-              </p>
             </div>
           );
         })}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Heading from "./ui/Heading";
+import { color2 } from "@/utils/colors.utils";
 
 export default function StudentWorkGallery() {
   const photos = [
@@ -13,12 +14,11 @@ export default function StudentWorkGallery() {
       <Heading
         title="Student Portfolio"
         subtitle="Student work gallery"
-        titleColor="#826955"
-        subtitleColor="#826955"
+        titleColor={color2}
+        subtitleColor={color2}
         description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia impedit voluptates maiores harum molestiae ad dolorum natus soluta nisi autem!"
       />
       <div className="w-full grid grid-cols-2 md:grid-cols-3 align-middle gap-2 sm:gap-5 py-10">
-        {/* <div></div> */}
         {photos.map((photo, index) => (
           <div key={index}>
             <Image

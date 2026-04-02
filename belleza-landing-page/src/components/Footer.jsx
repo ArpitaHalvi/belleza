@@ -1,32 +1,27 @@
 import Image from "next/image";
-import { GrInstagram } from "react-icons/gr";
-import { IoLogoYoutube } from "react-icons/io";
-import { FaFacebook } from "react-icons/fa6";
+
 import { FaPhoneAlt } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { FaLocationDot } from "react-icons/fa6";
+import { textColor2, textColor3, textColor4 } from "@/utils/colors.utils";
+import { socials } from "@/seeds/socials";
 
 export default function Footer() {
-  const socials = [
-    { name: "Instagram", icon: <GrInstagram size={20} />, link: "" },
-    { name: "Facebook", icon: <FaFacebook size={20} />, link: "" },
-    { name: "Youtube", icon: <IoLogoYoutube size={20} />, link: "" },
-  ];
   const details = [
     {
       name: "Address",
       value: "123 Main St, City, Country",
-      icon: <FaLocationDot size={20} className="text-[#826955]" />,
+      icon: <FaLocationDot size={20} className={`${textColor2}`} />,
     },
     {
       name: "Phone",
       value: "+1 (123) 456-7890",
-      icon: <FaPhoneAlt size={20} className="text-[#826955]" />,
+      icon: <FaPhoneAlt size={20} className={`${textColor2}`} />,
     },
     {
       name: "Email",
       value: "info@belleza.com",
-      icon: <SiGmail size={20} className="text-[#826955]" />,
+      icon: <SiGmail size={20} className={`${textColor2}`} />,
     },
   ];
   return (
@@ -80,12 +75,23 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <p className="text-xs text-[#F7F7EE] pb-15 sm:pb-0 pt-10">
-        &copy;
-        {new Date().getFullYear()}
-        <span className="capitalize text-center"> Belleza Beauty School</span>
-        All Rights Reserved.
-      </p>
+      <div className="w-full flex justify-between items-center">
+        <p className={`text-md ${textColor4} pb-15 sm:pb-0 pt-10`}>
+          &copy;
+          {new Date().getFullYear()}
+          <span className="capitalize text-center">
+            {" "}
+            Belleza Beauty School.{" "}
+          </span>
+          All Rights Reserved.
+        </p>
+        <a
+          href="https://vipprow.com/"
+          className={`text-md ${textColor4} pb-15 sm:pb-0 pt-10`}
+        >
+          Developed By <span className={`${textColor3}`}>Vipprow</span>
+        </a>
+      </div>
     </section>
   );
 }

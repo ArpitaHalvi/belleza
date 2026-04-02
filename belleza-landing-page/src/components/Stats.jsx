@@ -1,3 +1,5 @@
+import { textColor2 } from "@/utils/colors.utils";
+
 export default function Stats() {
   const stats = [
     { id: 1, value: "500+", label: "Students Enrolled" },
@@ -9,11 +11,15 @@ export default function Stats() {
     <div className="mx-auto lg:w-3/4 md:h-30 sm:p-10 p-2 grid grid-cols-2 md:grid-cols-4 gap-10 justify-items-center my-10">
       {stats.map((stat) => {
         return (
-          <div key={stat.id} className="text-[#826955] w-full">
-            <h4 className="font-extrabold sm:text-4xl text-3xl text-center">
+          <div key={stat.id} className="w-full">
+            <h4
+              className={`font-extrabold ${textColor2} sm:text-4xl text-3xl text-center tracking-tighter`}
+            >
               {stat.value}
             </h4>
-            <p className="font-semibold text-center sm:text-sm text-xs">
+            <p
+              className={`font-semibold text-center sm:text-sm text-xs ${textColor2} tracking-tight`}
+            >
               {stat.label}
             </p>
           </div>

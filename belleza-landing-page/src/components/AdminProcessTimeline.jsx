@@ -1,3 +1,11 @@
+import {
+  bgColor1,
+  bgColor3,
+  bgColor4,
+  color1,
+  textColor2,
+  textColor4,
+} from "@/utils/colors.utils";
 import Heading from "./ui/Heading";
 
 export default function AdminProcessTimeline() {
@@ -13,21 +21,23 @@ export default function AdminProcessTimeline() {
   ];
 
   return (
-    <section className="w-full flex flex-col items-center justify-center bg-[#FDDFBF] p-10 my-10">
+    <section
+      className={`w-full flex flex-col items-center justify-center p-10 my-10 ${bgColor3}`}
+    >
       <Heading
         title="Easy 5-step Process"
         subtitle="Admission Process Timeline"
-        titleColor="#791535"
-        subtitleColor="#791535"
+        titleColor={color1}
+        subtitleColor={color1}
         description="Start your professional journey with absolute clarity."
       />
 
       <div className="relative w-full max-w-6xl mt-10">
         <div
-          className="absolute 
-          left-6.5 top-0 bottom-0 w-0.5 bg-[#F7F7EE] 
+          className={`absolute 
+          left-6.5 top-0 bottom-0 w-0.5 ${bgColor4} 
            md:left-0 md:top-7 md:w-full md:h-px 
-         z-0"
+         z-0`}
         />
 
         <div className="relative z-10 flex flex-col md:flex-row justify-between items-start gap-8 md:gap-4">
@@ -37,16 +47,24 @@ export default function AdminProcessTimeline() {
               className="flex flex-row md:flex-col items-start md:items-center flex-1"
             >
               <div className="shrink-0">
-                <div className="rounded-full w-14 h-14 bg-[#791535] flex justify-center items-center text-[#F7F7EE] text-lg font-bold shadow-lg  ring-white">
+                <div
+                  className={`rounded-full w-14 h-14 ${bgColor1} flex justify-center items-center ${textColor4} text-lg font-bold shadow-lg  ring-white`}
+                >
                   {index + 1}
                 </div>
               </div>
 
               <div className="ml-6 md:ml-0 md:mt-6 flex flex-col items-start md:items-center text-left md:text-center">
-                <h4 className="font-bold text-lg leading-tight text-black">
+                <h4
+                  className={`font-bold text-lg leading-tight tracking-tight ${textColor2}`}
+                >
                   {p.name}
                 </h4>
-                <p className=" text-sm mt-2 max-w-50 text-black">{p.desc}</p>
+                <p
+                  className={`text-sm mt-1 max-w-50 ${textColor2} tracking-tight`}
+                >
+                  {p.desc}
+                </p>
               </div>
             </div>
           ))}

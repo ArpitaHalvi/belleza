@@ -20,7 +20,6 @@ const contactSchema = new Schema({
   },
   message: {
     type: String,
-    required: true,
   },
 });
 

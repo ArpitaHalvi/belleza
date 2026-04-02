@@ -1,6 +1,13 @@
 "use client";
 import { useState } from "react";
 import Heading from "./ui/Heading";
+import {
+  textColor1,
+  textColor2,
+  color1,
+  textColor4,
+  bgColor1,
+} from "@/utils/colors.utils";
 
 const details = [
   { name: "Address", value: "123 Main St, City, Country" },
@@ -45,6 +52,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState(initialData);
 
   const handleChange = (e) => {
+    console.log(e.target.value);
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -70,8 +78,6 @@ export default function ContactForm() {
     }
   };
 
-  // Places - Haldwani, Dehradun, Rudrapur, Bajpur
-
   return (
     <section className="w-full flex flex-col items-center justify-center p-5 sm:p-10">
       <Heading
@@ -82,21 +88,23 @@ export default function ContactForm() {
       />
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 py-10 sm:p-10">
         <div className="w-full flex flex-col items-start gap-3 bg-white rounded-2xl shadow-lg p-5 sm:p-7">
-          <h3 className="text-2xl font-bold tracking-tighter text-[#791535]">
+          <h3 className={`text-2xl font-bold tracking-tighter ${textColor1}`}>
             Contact Us
           </h3>
-          <p className="text-sm">
+          <p className={`text-sm ${textColor2} font-semibold`}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae,
             veritatis?
           </p>
-          <div className="flex flex-col sm:flex-row item-start sm:items-center gap-3 sm:gap-8">
+          <div className="py-2 flex flex-wrap gap-3 md:gap-10 xl:gap-20">
             {details.map((detail) => {
               return (
                 <div key={detail.name}>
-                  <h6 className="uppercase text-sm text-[#826955]">
+                  <h6 className={`uppercase text-sm ${textColor1} font-bold`}>
                     {detail.name}
                   </h6>
-                  <p className="text-sm font-semibold">{detail.value}</p>
+                  <p className={`text-sm font-semibold ${textColor2}`}>
+                    {detail.value}
+                  </p>
                 </div>
               );
             })}
@@ -109,19 +117,32 @@ export default function ContactForm() {
               {fields.map((field) => (
                 <div key={field.name} className="relative w-full">
                   {field.type === "select" ? (
-                    <select
-                      name={field.name}
-                      value={formData[field.name]}
-                      onChange={handleChange}
-                      required
-                      className="peer px-3 py-2 text-sm border rounded-lg border-gray-300 w-full focus:outline-none focus:border-[#791535] bg-white appearance-none"
-                    >
-                      <option value="" disabled hidden></option>
-                      <option value="haldwani">Haldwani</option>
-                      <option value="dehradun">Dehradun</option>
-                      <option value="bajpur">Bajpur</option>
-                      <option value="rudrapur">Rudrapur</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        name={field.name}
+                        value={formData[field.name]}
+                        onChange={handleChange}
+                        required
+                        className="peer px-3 py-2 text-sm border rounded-lg border-gray-300 w-full focus:outline-none focus:border-[#791535] bg-white appearance-none text-[#791535]"
+                      >
+                        <option value="" disabled hidden></option>
+                        <option value="haldwani">Haldwani</option>
+                        <option value="dehradun">Dehradun</option>
+                        <option value="bajpur">Bajpur</option>
+                        <option value="rudrapur">Rudrapur</option>
+                      </select>
+                      <div
+                        className={`pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 ${textColor1}`}
+                      >
+                        <svg
+                          className="fill-current h-5 w-5"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                      </div>
+                    </div>
                   ) : field.type === "textarea" ? (
                     <textarea
                       name={field.name}
@@ -129,8 +150,7 @@ export default function ContactForm() {
                       onChange={handleChange}
                       placeholder=" "
                       rows={6}
-                      required
-                      className="peer px-3 py-2 text-sm border rounded-lg border-gray-300 w-full focus:outline-none focus:border-[#791535]"
+                      className={`peer px-3 py-2 text-sm border rounded-lg border-gray-300 w-full focus:outline-none focus:border-[${color1}]`}
                     />
                   ) : (
                     <input
@@ -140,17 +160,38 @@ export default function ContactForm() {
                       onChange={handleChange}
                       required
                       placeholder=" "
-                      className="peer px-3 py-2 text-sm border rounded-lg border-gray-300 w-full focus:outline-none focus:border-[#791535]"
+                      className={`peer px-3 py-2 text-sm border rounded-lg border-gray-300 w-full focus:outline-none focus:border-[${color1}]`}
                     />
                   )}
 
-                  {/* Unified Label for all types */}
+                  {field.type === "select" && (
+                    <p className={`text-sm p-1 ${textColor1}`}>
+                      <span className="text-[]">&#42; </span> Please Select your
+                      nearest location.
+                    </p>
+                  )}
+                  {/* <label
+                    htmlFor={field.name}
+                    className={`absolute left-3 top-2 text-gray-500 text-sm transition-all pointer-events-none
+      peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400
+      peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[${color1}] 
+      peer-valid:-top-3 peer-valid:text-xs bg-white px-1`}
+                  >
+                    {field.label}
+                  </label> */}
                   <label
                     htmlFor={field.name}
-                    className="absolute left-3 top-2 text-gray-500 text-sm transition-all pointer-events-none
-      peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400
-      peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#791535] 
-      peer-valid:-top-3 peer-valid:text-xs bg-white px-1"
+                    className={`absolute left-3 transition-all pointer-events-none bg-white px-1
+  ${
+    field.type === "select"
+      ? formData[field.name]
+        ? "-top-3 text-xs text-[#791535]"
+        : "top-2 text-sm text-gray-400"
+      : `top-2 text-gray-500 text-sm
+         peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400
+         peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#791535]
+         peer-valid:-top-3 peer-valid:text-xs`
+  }`}
                   >
                     {field.label}
                   </label>
@@ -158,7 +199,7 @@ export default function ContactForm() {
               ))}
               <button
                 type="submit"
-                className="bg-[#791535] text-[#F7F7EE] hover:bg-[#5a102a] py-2 px-4 rounded-lg text-sm"
+                className={`${bgColor1} ${textColor4} hover:bg-[#5a102a] py-2 px-4 rounded-lg text-sm`}
               >
                 Send Message
               </button>
