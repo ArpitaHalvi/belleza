@@ -14,6 +14,7 @@ import { useRef } from "react";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import BottomNavbar from "@/components/BottomNavbar";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   const contactRef = useRef(null);
@@ -51,6 +52,7 @@ export default function Home() {
         onCourseClick={scrollToCourses}
       />
       <Footer />
+      <Toaster position="top-center" reverseOrder={false} />
     </main>
   );
 }

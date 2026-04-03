@@ -8,6 +8,7 @@ import {
   textColor4,
   bgColor1,
 } from "@/utils/colors.utils";
+import toast from "react-hot-toast";
 
 const details = [
   { name: "Address", value: "123 Main St, City, Country" },
@@ -52,7 +53,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState(initialData);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -65,16 +66,23 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        console.table(data);
-        alert("Message sent successfully!");
+      const data = await response.json();
+      console.log("response: ", response);
+      console.log("data: ", data);
+
+      if (response.status === 201) {
+        toast.success("Message sent successfully!");
         setFormData(initialData);
+      } else if (response.status === 422) {
+        toast.error(data.message || "Validation Failed.");
       } else {
-        alert("Failed to send message. Please try again.");
+        toast.error(
+          data.message || "Failed to send message. Please try again.",
+        );
       }
     } catch (e) {
       console.error("Error while sending message: ", e);
+      toast.error("Network error. Please try again.");
     }
   };
 

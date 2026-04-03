@@ -10,8 +10,10 @@ export const contactSchema = z.object({
 
   phoneNumber: z
     .string()
-    .min(10, "Phone number must be at least 10 digits")
-    .regex(/^[0-9+\s-]+$/, "Invalid phone number format"),
+    .regex(/^[0-9+\s-]+$/, "Invalid phone number format")
+    .refine((val) => val.replace(/\D/g, "").length >= 10, {
+      message: "Phone number must have at least 10 digits",
+    }),
 
   location: z.enum(["haldwani", "dehradun", "bajpur", "rudrapur"], {
     errorMap: () => ({ message: "Please select a valid location" }),
@@ -19,6 +21,6 @@ export const contactSchema = z.object({
 
   message: z
     .string()
-    .min(10, "Message must be at least 10 characters")
+    .min(0, "Message must be at least 10 characters")
     .max(1000, "Message is too long"),
 });

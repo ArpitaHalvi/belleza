@@ -158,7 +158,7 @@ const CourseCategories = ({ category, fn }) => {
   return (
     <section
       // className={`w-full h-10 overflow-x-auto no-scrollbar sm:overflow-hidden sm:h-20 flex justify-center items-center md:gap-10 border-b border-[${color1}]`}
-      className={`w-full h-10 overflow-x-auto no-scrollbar sm:overflow-hidden sm:h-20 flex justify-start items-center md:gap-10 px-4 scroll-px-4 border-b border-[${color1}]`}
+      className={`w-full h-10 overflow-x-auto no-scrollbar sm:overflow-hidden sm:h-20 flex justify-start min-[430px]:justify-center items-center md:gap-10 px-4 scroll-px-10 border-b border-[${color1}]`}
     >
       {courseCategories.map((category) => {
         return (

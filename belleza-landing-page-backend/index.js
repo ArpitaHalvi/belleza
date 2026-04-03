@@ -32,7 +32,9 @@ mongoose
 
 app.use("/api/contact", contactRouter);
 app.use((err, req, res, next) => {
-  const statusCode = res.statusCode || 500;
+  const statusCode = err.status || 500;
   const message = err.message || "Internal Server Error";
-  res.status(statusCode).json({ message });
+  const extraDetails = err.extraDetails || null;
+
+  res.status(statusCode).json({ message, extraDetails });
 });
